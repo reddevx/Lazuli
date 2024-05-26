@@ -7,7 +7,11 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
+gem "jbuilder"
+gem 'bootstrap-icons', '~> 1.0', '>= 1.0.14'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+gem 'sassc-rails', '>= 2.1.0'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
