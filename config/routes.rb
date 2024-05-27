@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   resources :posts
   root to: "static_pages#index"
   get 'sobre', to: "static_pages#sobre"
