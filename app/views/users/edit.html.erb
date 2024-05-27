@@ -1,23 +1,26 @@
-<section class="container">
 <div class="row">
   <div class="col-xs-12">
-    <h1>Cadastrar-se</h1>
+    <h1>Editar Perfil</h1>
   </div>
 
-  <div class="container">
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <%= form_for current_user do |f| %>
+     <%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<div class="form-group text-md-start">
-<% flash.each do |message_type, message| %>
-  <%= content_tag :div, class: "alert alert-#{message_type} alert-dismissible", role: 'alert' do %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <%= message %>
-  <% end %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit 'Atualizar' %>
 <% end %>
-
-  <%= form_for current_user do |f| %>
-      <%= render 'fields', f: f %>
 
     <% end %>
   </div>
 </div>
-</section>
