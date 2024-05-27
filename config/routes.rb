@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'cadastro', to: 'users#new'
   get 'entrar',   to: 'sessions#new'
   post 'entrar',  to: 'sessions#create'
-  delete 'sair',  to: 'sessions#destroy'
+  get 'sair',  to: 'sessions#destroy'
 
   resources :users, only: [:show, :new, :create, :edit, :update]
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]

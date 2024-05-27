@@ -8,13 +8,42 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-     
-        <li class="nav-item">
-       <%= link_to 'Nova Conta', new_user_path, class: 'text-decoration-none p-1' %>
+
+  <div class="collapse navbar-collapse" id="expanded-menu">
+    <ul class="nav navbar-nav">
+      <% if !user_signed_in? %>
+        <li class="active">
+          <%= link_to 'Nova Conta', cadastro_path %>
         </li>
-      </ul>
+      <% end %>
+    </ul>
+
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <% if !user_signed_in? %>
+        <li>
+          <%= link_to 'Entrar', entrar_path, class:'p1' %>
+      </li>
+      <% else %>
+        <p class="border border-primary p-1">bem vindo, <%= current_user.name %> </p>
+            <li>
+              <%= link_to 'Minha Pagina', user_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to 'Editar', '#' %>
+            </li>
+            <li class="divider" role="separator"></li>
+            <li>
+              <%= link_to 'Sair', sair_path, method: :delete, class:'text-decoration-none' %>
+            </li>
+          </ul>
+        </li>
+      <% end %>
+
+    </ul>
      
-     
+
     </div>
   </div>
 </nav>
