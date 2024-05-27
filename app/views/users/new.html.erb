@@ -1,11 +1,18 @@
-
-
+<section class="container">
 <div class="row">
   <div class="col-xs-12">
     <h1>Cadastrar-se</h1>
   </div>
 
   <div class="container">
+
+<div class="form-group text-md-start">
+<% flash.each do |message_type, message| %>
+  <%= content_tag :div, class: "alert alert-#{message_type} alert-dismissible", role: 'alert' do %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <%= message %>
+  <% end %>
+<% end %>
 
   <%= form_for @user do |f| %>
       <%= render 'fields', f: f %>
@@ -14,3 +21,4 @@
     <% end %>
   </div>
 </div>
+</section>

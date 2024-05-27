@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_secure_password
   before_save :email_downcase
 
@@ -10,12 +11,11 @@ class User < ApplicationRecord
                                     format: { with: VALID_EMAIL_REGEX },
                                     uniqueness: { case_sensitive: true }
 
-has_many :recipes
 
-private
 
-  def email_downcase
-  self.email = email.downcase
-  end
+  private
+    def email_downcase
+      self.email.downcase!
+    end
 
 end
