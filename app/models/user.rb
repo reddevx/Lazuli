@@ -15,6 +15,8 @@ class User < ApplicationRecord
                                     uniqueness: { case_sensitive: true }
 
 
+  has_many :posts
+
 
   private
     def email_downcase
