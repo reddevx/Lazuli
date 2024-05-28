@@ -15,4 +15,4 @@ production:
   database: blog
   username: root
   password: root
-  host: localhost
+  host: https://blog-23uo.onrender.com/
