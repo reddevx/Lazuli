@@ -1,19 +1,16 @@
-databases:
-  - name: postgres
-    ipAllowList: []
-    databaseName: my_app_render
-    user: root
-
+# Exported from Render on 2024-05-28T12:46:34Z
 services:
-  - type: web
-    name: my_app_render
-    env: ruby
-    buildCommand: "./render-build.sh"
-    startCommand: "bundle exec rails s"
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: postgres
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
+- type: web
+  name: blog
+  runtime: docker
+  repo: https://github.com/reddevx/blog
+  plan: free
+  envVars:
+  - key: RAILS_MASTER_KEY
+    sync: false
+  - key: WEB_CONCURRENCY
+    sync: false
+  region: oregon
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+version: "1"
