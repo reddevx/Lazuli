@@ -40,7 +40,7 @@
   <%= link_to 'Criar Conta', cadastro_path, class: 'text-decoration-none text-light' %>
 </button>
           <button class="shadow__btn">  
-              <%= link_to 'Logar', cadastro_path, class: 'text-decoration-none text-light' %>
+              <%= link_to 'Logar', entrar_path, class: 'text-decoration-none text-light' %>
 </button>
           </div>
         </div>
@@ -77,38 +77,77 @@
 <br>
 </section>
 <hr>
+ 
+      <% if !user_signed_in? %>
+  
+  <% else %>
+  <div class="d-md-none col-12">
+    <center>
+    <h1 class="text-center text-primary">Minha Conta</h1>
+   
+  <div class="dropdown p-4" >
+    <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span style="display: flex; align-items: center;">
+        <% if current_user.image.present? %>
+          <%= image_tag(current_user.image.url, style: 'width: 29px; height: 29px; border-radius: 50%; margin-right: 5px;') %>
+        <% end %>
+        <%= current_user.name %>
+      </span>
+    </a>
+
+    <ul class="dropdown-menu bg-primary text-white">
+      <li>
+        <%= link_to 'Publicações', posts_path(current_user), class:'text-decoration-none p-1 text-light'%>
+      </li>
+      <li>
+        <%= link_to 'Meu Perfil', user_path(current_user), class:'text-decoration-none p-1 text-light' %>
+      </li>
+      <li>
+        <%= link_to 'Editar', edit_user_path(current_user), class:'text-decoration-none p-1 text-light'%>
+      </li>
+      <li>
+        <%= link_to 'Sair', sair_path, method: :delete, class:'text-decoration-none p-1 text-light' %>
+      </li>
+    </ul>
+  </div>
+</div>
+ </center>
+<br>
 <div class="container mt-5">
   <div class="row mt-4">
     <div class="col-md-4">
-      <div class="card">
+      <div class="card border border-primary">
         <div class="card-body text-center">
+          <i class="bi bi-flag h3 text-primary"></i>
           <span class="fa fa-user fa-3x mb-3"></span>
-          <h5 class="card-title">Central de Noticias</h5>
-          <a target="_blank" href="https://reddevx.github.io/CentralDeNoticias-Mongagu-/Monguagu%C3%A1.html" class="btn btn-primary">Ver Todos</a>
+          <h5 class="card-title text-primary">Ouvidoria Online</h5>
+          <a target="_blank" href="https://eouve.com.br/#/ouvidoria" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card">
+      <div class="card border border-primary">
         <div class="card-body text-center">
+          <i class="bi bi-balloon-heart h3 text-primary" ></i>
           <span class="fa fa-cogs fa-3x mb-3"></span>
-          <h5 class="card-title">ONGs</h5>
-          <a href="#" class="btn btn-primary">Editar</a>
+          <h5 class="card-title text-primary">ONGs</h5>
+          <a target="_blank" href="https://mongagua.sp.gov.br/noticias/fundo-social" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card">
+      <div class="card border border-primary">
         <div class="card-body text-center">
+          <i class="bi bi-envelope h3 text-primary"></i>
           <span class="fa fa-chart-bar fa-3x mb-3"></span>
-          <h5 class="card-title">Relatórios</h5>
-          <a href="#" class="btn btn-primary">Visualizar</a>
+          <h5 class="card-title text-primary">Webmail Mongaguá</h5>
+          <a target="_blank" href="https://webmail.mongagua.sp.gov.br/" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<% end %>
 <br>
 <% end %>
 <div class="container">
@@ -121,20 +160,22 @@
 <div class="container mt-5">
   <div class="row mt-4">
     <div class="col-md-6 text-md-start">
-      <div class="card">
+      <div class="card border border-primary">
         <div class="card-body text-center">
+          <i class="bi bi-journal-medical h3 text-primary"></i>
           <span class="fa fa-user fa-3x mb-3"></span>
-          <h5 class="card-title">Central de Noticias</h5>
-          <a target="_blank" href="https://reddevx.github.io/CentralDeNoticias-Mongagu-/Monguagu%C3%A1.html" class="btn btn-primary">Ver Todos</a>
+          <h5 class="card-title text-primary">Central de Noticias</h5>
+          <a target="_blank" href="https://reddevx.github.io/CentralDeNoticias-Mongagu-/Monguagu%C3%A1.html" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card">
+      <div class="card border border-primary">
         <div class="card-body text-center">
+          <i class="bi bi-chat-dots h3 text-primary"></i>
           <span class="fa fa-cogs fa-3x mb-3"></span>
-          <h5 class="card-title">Chat Comunidade</h5>
-          <a href="https://reddevx.github.io/CentralDeNoticias-Mongagu-/index.html" class="btn btn-primary">Editar</a>
+          <h5 class="card-title text-primary">Chat Comunidade</h5>
+          <a target="_blank" href="https://reddevx.github.io/CentralDeNoticias-Mongagu-/index.html" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -179,7 +220,7 @@
 
   <div class="d-inline-block mx-2 text-center">
     <i class="bi bi-cloud-haze2-fill text-white mb-2" style="font-size: 2rem;"></i>
-       <%= link_to 'Dados e Pesquisa', '#', class: 'link text-white d-block text-decoration-none' %>
+       <%= link_to 'Dados e Pesquisa', data_path, class: 'link text-white d-block text-decoration-none' %>
   </div>
 </div>
 <br>

@@ -7,14 +7,18 @@
       <div class="row bg-body-secondary p-1 rounded-3">
         <h3 class="text-primary-emphasis p-1">Meus dados</h3>
         <div class="col-md-3 text-center">
-          <%= image_tag(current_user.image.url, style: 'width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;', class:'border border-primary border-3') %>
+  <% if current_user.image.present? %>
+      <%= image_tag(current_user.image.url, style: 'width: 150px; height: 150px; border-radius: 50%; margin-right: 5px;') %>
+    <% end %>
         </div>
         <div class="col-md-9">
+          <br>
           <p class="text-md-start text-primary-emphasis">Email: <%= current_user.email %></p>
           <p class="text-md-start text-primary-emphasis">Nome: <%= current_user.name %></p>
           <p class="text-md-start text-primary-emphasis">Número de Publicações: <%= current_user.posts.count %></p>
         </div>
       </div>
+      <br>
       <h3 class="p-1 text-center">Quer atualizar o seu Perfil?   <%= link_to 'Clique Aqui', edit_user_path(current_user), class:'text-decoration-none p-1 text-primary'%></h3>
     </div>
   </div>

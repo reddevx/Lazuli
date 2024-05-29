@@ -1,27 +1,39 @@
-<div>
-<p>
-  <%= image_tag(post.image.url) if post.image.present? %>
-</p>
-  <h2><%= link_to post.title, post, class: 'text-decoration-none text-primary-emphasis' %></h2>
-  <p><%= post.text %></p>
-  <p>
-  
-<p>
-  <strong>Local:</strong>
-  <%= post.local %>
-</p>
-
-<p>
-  <strong>Nível de Gravidade:</strong>
-  <%= post.level_danger %>
-</p>
-
-  <strong>Publicado por:</strong>
-    <% if post.user %>
-      <%= post.user.name %>
-    <% else %>
-      Usuário Desconhecido
-    <% end %>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="post-image">
+        <%= image_tag(post.image.url, class: "img-fluid") if post.image.present? %>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="news-post">
+        <div class="post-content">
+          <h2 class="post-title">
+            <%= link_to post.title, post, class: 'text-decoration-none text-primary-emphasis' %>
+          </h2>
+          <p class="post-text">
+            <%= post.text %>
+          </p>
+          <div class="post-details">
+            <p>
+              <strong>Local:</strong>
+              <%= post.local %>
+            </p>
+            <p>
+              <strong>Nível de Gravidade:</strong>
+              <%= post.level_danger %>
+            </p>
+            <p>
+              <strong>Publicado por:</strong>
+              <% if post.user %>
+                <%= post.user.name %>
+              <% else %>
+                Usuário Desconhecido
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

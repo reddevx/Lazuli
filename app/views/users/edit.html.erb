@@ -26,6 +26,11 @@
     <%= f.password_field :password_confirmation, class: "form-control", required: true %>
   </div>
 
+ <div class="mb-3">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+ </div>
+
   <%= f.submit 'Atualizar', class: 'btn btn-primary' %>
 
 

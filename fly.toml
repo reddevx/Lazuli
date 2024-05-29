@@ -1,13 +1,16 @@
-# fly.toml app configuration file generated for lazuli-onix on 2024-05-29T11:52:09-03:00
+# fly.toml app configuration file generated for lazuli-hackzz on 2024-05-29T12:28:34-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'lazuli-onix'
+app = 'lazuli-hackzz'
 primary_region = 'gru'
 console_command = '/rails/bin/rails console'
 
 [build]
+
+[deploy]
+  release_command = './bin/rails db:prepare'
 
 [http_service]
   internal_port = 3000
@@ -18,6 +21,11 @@ console_command = '/rails/bin/rails console'
   processes = ['app']
 
 [[vm]]
-  memory = '512mb'
+  size = 'shared-cpu-1x'
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[[statics]]
+  guest_path = '/rails/public'
+  url_prefix = '/'

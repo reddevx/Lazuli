@@ -12,7 +12,7 @@ development:
 
 production:
   <<: *default
-  database: blog
-  username: root
-  password: root
-  host: https://blog-23uo.onrender.com/
+  database: postgres://postgres:5Z63WfG3LCUAAD8@lazuli-app-hack.flycast:5432
+  username: postgres
+  password: 5Z63WfG3LCUAAD8
+  host: https://lazuli-hackzz.fly.dev/

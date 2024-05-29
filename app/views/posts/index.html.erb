@@ -5,8 +5,10 @@
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
+    
+    <br>
     <p>
-      <%= link_to "Ver Publicação", post, class: 'btn btn-primary' %>
+      <%= link_to "Ver Publicação", post, class: 'btn btn-primary p-2' %>
     </p>
   <% end %>
 </div>
