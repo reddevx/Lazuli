@@ -1,14 +1,14 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Notices</h1>
-
-<div id="notices">
+<h1>Notícias e Avisos </h1>
+<%= link_to "Publicar nova notícia", new_notice_path, class: 'btn btn-success p-2' %>
+<br>
+<div id="notices" class="container p-2">
   <% @notices.each do |notice| %>
     <%= render notice %>
-    <p>
-      <%= link_to "Show this notice", notice %>
+     <p class="p-3">
+      <%= link_to "Ver esta notícia", notice, class: 'btn btn-primary p-1 text-center' %>
     </p>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New notice", new_notice_path %>

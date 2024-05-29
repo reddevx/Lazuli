@@ -1,42 +1,41 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, class: "form-container") do |form| %>
   <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h4>
       <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :Titulo, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_field :text %>
+  <div class="form-group">
+    <%= form.label :Ocorrido, class: "form-label" %>
+    <%= form.text_field :text, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :local %>
-    <%= form.text_field :local %>
+  <div class="form-group">
+    <%= form.label :local, class: "form-label" %>
+    <%= form.text_field :local, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :level_danger %>
-    <%= form.text_field :level_danger %>
+  <div class="form-group">
+    <%= form.label :Perigo, class: "form-label" %>
+    <%= form.text_field :level_danger, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+  <div class="form-group">
+    <%= form.label :image, class: "form-label" %>
+    <%= form.file_field :image, class: "form-control-file" %>
   </div>
-
-  <div>
-    <%= form.submit %>
+<br>
+  <div class="form-group p-1">
+    <%= form.submit "Enviar Publicação", class: "shadow__btn" %>
   </div>
 <% end %>

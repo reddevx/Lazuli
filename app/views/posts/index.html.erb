@@ -1,15 +1,15 @@
 <section class="container">
 
-<h1>Postagens</h1>
+<h1 class="text-primary text-center">Publicações | Moradores</h1>
 
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Ver Publicação", post, class: 'btn btn-primary' %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to "Nova Publicação", new_post_path %>
 </section>

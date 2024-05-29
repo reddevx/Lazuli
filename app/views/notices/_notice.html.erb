@@ -1,16 +1,22 @@
-<div id="<%= dom_id notice %>">
-  <p>
-    <strong>Title:</strong>
-    <%= notice.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= notice.content %>
-  </p>
-
-<p>
-  <%= image_tag(notice.image.url) if notice.image.present? %>
-</p>
-
+<div id="<%= dom_id notice %>" class="container-fluid notice-container">
+  <div class="row">
+    <% if notice.image.present? %>
+      <div class="col-md-4">
+        <%= image_tag(notice.image.url, class: "notice-image img-fluid border border-primary border-2") %>
+      </div>
+    <% end %>
+    <div class="col-md-8">
+      <p class="notice-title">
+        <strong>Titulo:</strong>
+        <%= notice.title %>
+      </p>
+      <p class="notice-content">
+        <strong>Conteúdo:</strong>
+        <%= notice.content %>
+      </p>
+      <p class="notice-timestamp">
+        Publicado por: Prefeitura De Mongaguá at <%= notice.created_at.strftime("%d/%m/%Y %H:%M") %>
+      </p>
+    </div>
+  </div>
 </div>

@@ -8,11 +8,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
+    Rails.logger.debug "User params: #{user_params.inspect}"
     if @user.save
       flash[:success] = 'Cadastro realizado com sucesso'
       redirect_to root_url
     else
+      Rails.logger.debug "User errors: #{@user.errors.full_messages}"
       render 'new'
     end
   end
@@ -34,7 +36,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
     end
 
 end
