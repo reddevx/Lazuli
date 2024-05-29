@@ -1,0 +1,69 @@
+
+<div class="container mt-5">
+  <h1 class="mb-4">Previsão do Tempo para Mongaguá</h1>
+  <div id="weather">
+    <!-- Os dados do tempo serão exibidos aqui -->
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const apiKey = 'df23b5edbaa7447f89432943242905';
+    const coordinates = '-24.0939,-46.6228';
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${coordinates}&days=4&aqi=no&alerts=yes`;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        displayWeather(data);
+      })
+      .catch(error => {
+        console.error('Houve um problema com a operação fetch:', error);
+      });
+
+    function displayWeather(data) {
+      const weatherContainer = document.getElementById('weather');
+      const locationName = data.location.name;
+      const current = data.current;
+      const forecast = data.forecast.forecastday;
+
+      const currentWeatherHTML = `
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Localização: ${locationName}</h5>
+            <p class="card-text">Temperatura Atual: ${current.temp_c}°C</p>
+            <p class="card-text">Condição Atual: ${current.condition.text}</p>
+            <img src="${current.condition.icon}" alt="${current.condition.text}">
+          </div>
+        </div>
+      `;
+
+      let forecastHTML = '<h5>Previsão para os próximos dias:</h5>';
+      forecast.forEach(day => {
+        forecastHTML += `
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">${new Date(day.date).toLocaleDateString()}</h6>
+              <p class="card-text">Máxima: ${day.day.maxtemp_c}°C</p>
+              <p class="card-text">Mínima: ${day.day.mintemp_c}°C</p>
+              <p class="card-text">Condição: ${day.day.condition.text}</p>
+              <img src="${day.day.condition.icon}" alt="${day.day.condition.text}">
+              <p class="card-text">Chance de Chuva: ${day.day.daily_chance_of_rain}%</p>
+              <p class="card-text">Chance de Neve: ${day.day.daily_chance_of_snow}%</p>
+            </div>
+          </div>
+        `;
+      });
+
+      weatherContainer.innerHTML = currentWeatherHTML + forecastHTML;
+    }
+  });
+</script>
+
+</body>
+</html>

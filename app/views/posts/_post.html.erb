@@ -1,12 +1,27 @@
 <div>
-  <h2><%= link_to post.title, post %></h2>
+<p>
+  <%= image_tag(post.image.url) if post.image.present? %>
+</p>
+  <h2><%= link_to post.title, post, class: 'text-decoration-none' %></h2>
   <p><%= post.text %></p>
   <p>
-    <strong>Posted by:</strong>
+  
+<p>
+  <strong>Local:</strong>
+  <%= post.local %>
+</p>
+
+<p>
+  <strong>Nível de Gravidade:</strong>
+  <%= post.level_danger %>
+</p>
+
+  <strong>Publicado por:</strong>
     <% if post.user %>
       <%= post.user.name %>
     <% else %>
-      Unknown User
+      Usuário Desconhecido
     <% end %>
-  </p>
+
+
 </div>

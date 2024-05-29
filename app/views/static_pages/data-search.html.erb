@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast and Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+
+</style>
+<body>
+
+<div class="container mt-5">
+  <h1>Pesquisa de Dados de Mongaguá</h1>
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Dados obtidos pela empresa Onix.</h5>
+    </div>
+  </div>
+
+  <div class="card text-center mb-4">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Já respondeu nossa Pesquisa de Campo?</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe960PvXzlkWFZTrzYeeBEPxDNffavCzpi7hE_GUZXG_Wb5xw/viewform" class="btn btn-primary">Go somewhere</a>
+    </div>
+   
+  </div>
+
+<section class="container">
+    <h2 class="p-1">Dados Obtidos na Pesquisa:</h2>
+
+  <div class="card mb-4">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <canvas id="first"></canvas>   
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Já sofreu com incidentes de Obras Públicas?</h5>
+        <p class="card-text"><small class="text-body-secondary">última Atualização: 28/05/2024</small></p>
+         <ul class="list-group">
+  <li class="list-group-item active" aria-current="true">Legenda</li>
+  <li class="list-group-item">Sim: <i class="bi bi-circle-fill text-primary"></i></li>
+  <li class="list-group-item">Não: <i class="bi bi-circle-fill text-danger"></i></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Você já enfrentou algum problema climático (Como: enchentes, deslizamentos e tempestades) em Mongaguá?</h5>
+          <p class="card-text"><small class="text-body-secondary">Última Atualização: 28/05/2024</small></p>
+          <ul class="list-group">
+            <li class="list-group-item active" aria-current="true">Legenda</li>
+            <li class="list-group-item">Sim: <i class="bi bi-circle-fill text-primary"></i></li>
+            <li class="list-group-item">Não: <i class="bi bi-circle-fill text-danger"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <canvas id="second"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card mb-4">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <canvas id="third"></canvas>   
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Se sim, qual foi a natureza do problema?</h5>
+        <p class="card-text"><small class="text-body-secondary">última Atualização: 28/05/2024</small></p>
+         <ul class="list-group">
+  <li class="list-group-item active" aria-current="true">Legenda</li>
+  <li class="list-group-item">Sim: <i class="bi bi-circle-fill text-primary"></i></li>
+  <li class="list-group-item">Não: <i class="bi bi-circle-fill text-danger"></i></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('first').getContext('2d');
+    var first = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['66.7%', '33.3%'],
+        datasets: [{
+          data: [66.7, 33.3],
+          backgroundColor: ['#dc3545', '#36A2EB'],
+          hoverBackgroundColor: ['#dc3545', '#36A2EB']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('second').getContext('2d');
+    var second = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['85.7%', '14.3%'],
+        datasets: [{
+          data: [85.7, 14.3],
+          backgroundColor: ['#dc3545', '#36A2EB'],
+          hoverBackgroundColor: ['#dc3545', '#36A2EB']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('third').getContext('2d');
+    var third = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['71.4%', '0%', '', '', ''],
+        datasets: [{
+          data: [85.7, 14.3],
+          backgroundColor: ['#dc3545', '#36A2EB'],
+          hoverBackgroundColor: ['#dc3545', '#36A2EB']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

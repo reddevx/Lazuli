@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :require_logged_in_user
   # GET /posts or /posts.json
   def index
-    @posts = current_user.posts
+    @posts = Post.all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -68,7 +68,6 @@ end
     end
 
     def post_params
-      params.require(:post).permit(:title, :text)
+      params.require(:post).permit(:title, :text, :local, :level_danger, :image)
     end
-
 end

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-dark col-12 text-white container p-3">
+<nav class="navbar navbar-expand-lg bg-body-secondary text-white p-3">
   <div class="container-fluid">
 
-     <%= link_to 'Blog', root_path, class: 'text-decoration-none p-1' %>
+     <%= link_to 'Lazuli.', root_path, class: 'text-decoration-none text-primary fw-bold h4' %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,6 +9,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+ <%= link_to 'Sobre', sobre_path, class: 'text-decoration-none text-primary p-2' %>
+ <%= link_to 'Contato', contato_path, class: 'text-decoration-none text-primary p-2' %>
+ <%= link_to 'Termos', terms_path, class: 'text-decoration-none text-primary p-2' %>
+
 
   <div class="collapse navbar-collapse" id="expanded-menu">
     <ul class="nav navbar-nav">
@@ -26,7 +30,10 @@
           <%= link_to 'Entrar', entrar_path, class:'p-1' %>
       </li>
       <% else %>
-<div class="dropdown">
+      <br>
+
+
+<div class="dropdown p-5" style="position: absolute; top: 1; right: 0;">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
    <span>bem vindo, <%= current_user.name %></span>  
    </a>
@@ -52,3 +59,5 @@
     </div>
   </div>
 </nav>
+
+

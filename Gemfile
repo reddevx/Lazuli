@@ -15,6 +15,10 @@ gem 'bootstrap-icons', '~> 1.0', '>= 1.0.14'
 
 gem 'pg'
 
+
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.9'  # Se você precisar de redimensionamento de imagens
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 

@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_27_132250) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_28_232254) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notices", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -21,6 +29,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_27_132250) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "name"
+    t.string "local"
+    t.string "level_danger"
+    t.string "image"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

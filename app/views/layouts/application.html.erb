@@ -5,16 +5,70 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-      <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+   <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
+
+body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #0d6efd;
+    border-radius: 6px;
+    border: 3px solid transparent;
+  }
+  
+  
+  body::-webkit-scrollbar {
+    width: 12px;
+    background-color: white;
+  }
+  
+
+  .shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  
+  .shadow__btn {
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }
+</style>
   <body>  
     <%= render 'layouts/header' %>
-    
-    <main class="container p-1">
-  
+    <main class="container p-2">
+    <section class="container bg-tertiary">
+      <form class="d-flex text-md-center container" id="searchForm">
+  <input class="form-control me-2 border border-primary textt-primary" type="search" placeholder="Buscar" aria-label="Search" id="searchInput">
+  <button class="btn btn-outline-primary" type="submit">Buscar</button>
+</form>
+</section>
+  <br>
 <% flash.each do |message_type, message| %>
   <%= content_tag 'div', class: "alert alert-success alert-#{message_type} alert-dismissible", role: 'alert' do %>
     
@@ -23,10 +77,37 @@
 <% end %>
 
     <%= yield %>
-    </main>
     <%= render 'layouts/footer' %>
+
+   <script>
+  $(document).ready(function() {
+    // Função para rolar até o ponto onde foi encontrado o nome pesquisado
+    function scrollToResult() {
+      var searchResultElement = $('#searchResult'); // Elemento onde o nome pesquisado foi encontrado
+      if (searchResultElement.length) {
+        var navbarHeight = $('nav').outerHeight(); // Altura da navbar
+        var resultTop = searchResultElement.offset().top - navbarHeight; // Posição do resultado em relação ao topo da página
+        $('html, body').animate({
+          scrollTop: resultTop
+        }, 1000); // Tempo de rolagem em milissegundos
+      }
+    }
+
+    // Evento de envio do formulário de busca
+    $('#searchForm').on('submit', function(event) {
+      event.preventDefault(); // Impede o comportamento padrão do formulário
+
+      // Adicione aqui o código para lidar com a busca (ex: enviar solicitação AJAX)
+      // Após a busca ser concluída, role até o ponto onde o nome pesquisado foi encontrado
+      scrollToResult();
+    });
+  });
+</script>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+   </main>
   </body>
 </html>
