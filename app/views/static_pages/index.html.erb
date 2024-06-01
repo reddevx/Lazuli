@@ -1,3 +1,4 @@
+<main class="container">
     <!--Seção de Home-->
       <script>
     document.addEventListener('keydown', function (event) {
@@ -152,9 +153,13 @@
 <% end %>
 <div class="container">
   <div class="d-flex justify-content-between align-items-center mb-4">
-   <% if !user_signed_in? %> 
+  <% if !user_signed_in? %>
+      
+      <% else %>
+
+  <% if !user_signed_in? %>
    <h1 class="mb-0 text-primary">Previsão do Tempo para Mongaguá </h1>
-   <% end %>
+<% end %>
 
 
 <div class="container mt-5">
@@ -181,29 +186,31 @@
     </div>
     <div>
 </div   >
-    <br>  <% if !user_signed_in? %>
-<i class="bi bi-bell-fill text-center"></i>
+
+  <% if !user_signed_in? %>
+  <i class="bi bi-bell-fill text-center"></i>
+
   <div class="card-body">
     <h5 class="card-title">Atenção!</h5>
     <p class="card-text">Ao se cadastrar, você obtem mais 4 dias de previsão do tempo para Mongaguá, além de outros recursos</p>
   </div>
 </div> 
-<% end %>
-    </div>
   </div>
+  </div>
+  <% end %>
+  <br>
   <div id="weather">
     <!-- Conteúdo da previsão do tempo aqui -->
   </div>
   
 </div>
+<% end %>
 
-
-
-  <% if !user_signed_in? %>
+<% if !user_signed_in? %>
 
 <% end %>
 
-<section class="bg-body-secondary p-2">
+<section class="bg-body-secondary p-2 col-12">
   <h2 class="text-md-start container text-primary">Mais Recursos</h2>
 <div class="container container-fluid text-center bg-primary text-light py-4" id="box-index">
   
@@ -291,3 +298,5 @@
     }
   });
 </script>
+
+</main>
