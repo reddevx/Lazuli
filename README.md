@@ -1,7 +1,6 @@
 
 <img src="https://raw.githubusercontent.com/reddevx/PetBook/main/imagem/petbook.png">
 
-Onix
 ## Imagens
 
 <center>
