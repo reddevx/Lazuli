@@ -30,9 +30,25 @@ Instale o projeto com o Git
 
 ## Funcionalidades
 
-- Cadastro de usuário e Cadastro de Animais
-- Modo tela cheia
-- Multiplataforma & Responsividade
+-Gerenciamento de Contas: Sistema de cadastro e autenticação de usuários com PostgreSQL, garantindo segurança e confiabilidade dos dados.
+
+-Sistema de Publicações para Moradores: Permite publicar, editar e excluir publicações, promovendo interação e engajamento da comunidade.
+
+-Sistema de Postagem de Notícias para a Prefeitura: Facilita a comunicação entre a prefeitura e os moradores.
+
+-Serviços de Acessibilidade: Integração com VLIBRAS, oferecendo tradução automática de texto para Libras.
+
+-API de Previsão Meteorológica: Fornece informações meteorológicas precisas e atualizadas.
+
+-Integração com Serviços Online da Prefeitura: Facilita o acesso a serviços públicos como Ouvidoria e Fundo Social.
+
+-Central de Notícias e Chat de Comunidade: Promove a troca de informações e o fortalecimento dos laços comunitários.
+
+-Página de Ajuda aos Moradores: Oferece suporte e orientação prática.
+
+-Páginas de Dados e Pesquisa: Exibe dados de pesquisas, proporcionando transparência.
+
+-Sistema de Perfil: Permite aos usuários editar informações pessoais e adicionar fotos de perfil.
 
 
 ## Melhorias
