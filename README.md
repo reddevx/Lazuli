@@ -1,5 +1,5 @@
 
-<img src="https://raw.githubusercontent.com/reddevx/PetBook/main/imagem/petbook.png">
+<img src="https://raw.githubusercontent.com/reddevx/Lazuli/main/app/assets/images/C%C3%B3pia%20de%20Beyond.png">
 
 ## Imagens
 
