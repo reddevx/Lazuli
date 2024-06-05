@@ -1,24 +1,84 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="https://raw.githubusercontent.com/reddevx/PetBook/main/imagem/petbook.png">
 
-Things you may want to cover:
+Onix
+## Imagens
 
-* Ruby version
+<center>
 
-* System dependencies
+<img src="https://github.com/reddevx/GoshiGo/blob/main/imagem/image.png">
 
-* Configuration
+</center>
 
-* Database creation
+## Instalação
 
-* Database initialization
+Instale o projeto com o Git
 
-* How to run the test suite
+```bash
+  git clone https://github.com/reddevx/GoshiGo.git
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
+    
+## Stack utilizada
 
-* ...
+**Front-end:** HTML5, CSS3 e Bootstrap
+
+**Back-end:** Ruby on Rails
+
+**Banco de dados:** PostgreSQL
+
+
+## Funcionalidades
+
+- Cadastro de usuário e Cadastro de Animais
+- Modo tela cheia
+- Multiplataforma & Responsividade
+
+
+## Melhorias
+
+- Refatoração de código
+- Melhoria na segurança do usuário
+- Acessibilidade
+
+
+## Roadmap
+
+- Melhorar o suporte de navegadores
+
+- Adicionar mais integrações
+
+
+## Suporte
+
+Para suporte, mande um email para desenvolvedor.juan.business@gmail.com .
+
+
+## Feedback
+
+Se você tiver algum feedback, por favor nos deixe saber por meio de desenvolvedor.juan.business@gmail.com 
+
+
+## Demonstração
+
+https://anidex-animals.000webhostapp.com/
+
+## Autores
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- [@reddevx](https://www.github.com/reddevx)
+
