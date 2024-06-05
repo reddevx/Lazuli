@@ -75,10 +75,6 @@ Para suporte, mande um email para desenvolvedor.juan.business@gmail.com .
 Se você tiver algum feedback, por favor nos deixe saber por meio de desenvolvedor.juan.business@gmail.com 
 
 
-## Demonstração
-
-https://anidex-animals.000webhostapp.com/
-
 ## Autores
 
 
