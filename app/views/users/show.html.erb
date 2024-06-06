@@ -2,10 +2,13 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
+        <center>
+   <%= image_tag "meu-perfil.svg", alt: "Exemplo de imagem", style: 'height: 300px', class: 'text-center'  %>
+   </center>
       <h1 class="p-1 h1 text-center">Seja Bem-vindo ao seu perfil, <span class="text-primary fw-bold"><%= current_user.name %></span></h1>
       <hr>
       <div class="row bg-body-secondary p-1 rounded-3">
-        <h3 class="text-primary-emphasis p-1">Meus dados</h3>
+        <h3 class="text-primary-emphasis p-2 text-center fw-bold">Meus dados</h3>
         <div class="col-md-3 text-center">
   <% if current_user.image.present? %>
       <%= image_tag(current_user.image.url, style: 'width: 150px; height: 150px; border-radius: 50%; margin-right: 5px;') %>
@@ -13,13 +16,13 @@
         </div>
         <div class="col-md-9">
           <br>
-          <p class="text-md-start text-primary-emphasis">Email: <%= current_user.email %></p>
-          <p class="text-md-start text-primary-emphasis">Nome: <%= current_user.name %></p>
-          <p class="text-md-start text-primary-emphasis">Número de Publicações: <%= current_user.posts.count %></p>
+          <p class="text-md-start text-primary fw-bold">Email: <%= current_user.email %></p>
+          <p class="text-md-start text-primary fw-bold">Nome: <%= current_user.name %></p>
+          <p class="text-md-start text-primary fw-bold">Número de Publicações: <%= current_user.posts.count %></p>
         </div>
       </div>
       <br>
-      <h3 class="p-1 text-center">Quer atualizar o seu Perfil?   <%= link_to 'Clique Aqui', edit_user_path(current_user), class:'text-decoration-none p-1 text-primary'%></h3>
+      <h4 class="p-1 text-center">Quer atualizar o seu Perfil?   <%= link_to 'Clique Aqui', edit_user_path(current_user), class:'text-decoration-none p-1 text-primary'%></h4>
     </div>
   </div>
 </div>

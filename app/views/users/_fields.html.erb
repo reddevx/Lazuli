@@ -1,6 +1,5 @@
 <%= form_with model: @user, local: true, class: "needs-validation", novalidate: true do |form| %>
-
-
+<section class="container p-3">
   <div class="mb-3">
     <%= form.label :name, class: "form-label" %>
     <%= form.text_field :name, class: "form-control", required: true %>
@@ -23,9 +22,11 @@
 
 
   <div class="mb-3">
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+  <%= f.label :Foto %>
+<%= f.file_field :image, class: 'form-control form-control' %>
+<br>
  </div>
 
     <%= form.submit 'Cadastrar', class: "text-light shadow__btn text-center" %>
 <% end %>
+</section>

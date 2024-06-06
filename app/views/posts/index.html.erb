@@ -1,17 +1,19 @@
 <section class="container">
-
+  <center>
+   <%= image_tag "post.svg", alt: "Exemplo de imagem", style: 'height: 300px', class: 'text-center'  %>
+   </center>
 <h1 class="text-primary text-center">Publicações | Moradores</h1>
-
-<div id="posts">
+<%= link_to "Fazer nova Publicação", new_post_path, class: 'btn btn-primary' %>
+<br>
+<div id="posts" class="container p-3">
   <% @posts.each do |post| %>
     <%= render post %>
-    
-    <br>
     <p>
       <%= link_to "Ver Publicação", post, class: 'btn btn-primary p-2' %>
-    </p>
+    </p>   
+    <br>
+ 
   <% end %>
 </div>
 
-<%= link_to "Nova Publicação", new_post_path %>
 </section>

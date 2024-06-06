@@ -8,6 +8,19 @@
     <div class="col-md-9">
       <div class="news-post">
         <div class="post-content">
+               <% if post.user %>
+       
+      <%= image_tag(post.user.image.url, style: 'width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;')%>
+    <p class="text-primary fw-bold">
+              <% if post.user %>
+                <%= post.user.name %>
+              <% else %>
+                Usuário Desconhecido
+              <% end %>
+            </p>
+              <% else %>
+                Usuário Desconhecido
+              <% end %>
           <h2 class="post-title">
             <%= link_to post.title, post, class: 'text-decoration-none text-primary-emphasis' %>
           </h2>
@@ -23,14 +36,10 @@
               <strong>Nível de Gravidade:</strong>
               <%= post.level_danger %>
             </p>
-            <p>
-              <strong>Publicado por:</strong>
-              <% if post.user %>
-                <%= post.user.name %>
-              <% else %>
-                Usuário Desconhecido
-              <% end %>
-            </p>
+            <p class="col-7">
+          <iframe height="150px" class="border border-primary border-2" width="500px" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3641.0828245410526!2d-46.71339259998943!3d-24.13372929180115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDA4JzAxLjUiUyA0NsKwNDInNDQuNyJX!5e0!3m2!1sen!2sbr!4v1717516757543!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </p>
+        <hr>
           </div>
         </div>
       </div>

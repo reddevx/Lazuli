@@ -1,6 +1,9 @@
 
-<h1>Notícias e Avisos </h1>
-<%= link_to "Publicar nova notícia", new_notice_path, class: 'btn btn-success p-2' %>
+<h1 class="text-primary text-center">Notícias e Avisos da Prefeitura</h1>
+  <center>
+   <%= image_tag "notice.svg", alt: "Exemplo de imagem", style: 'height: 300px', class: 'text-center'  %>
+   </center>
+<%= link_to "Publicar nova notícia", new_notice_path, class: 'btn btn-primary p-2' %>
 <br>
 <div id="notices" class="container p-2">
   <% @notices.each do |notice| %>

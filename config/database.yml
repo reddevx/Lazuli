@@ -1,18 +1,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: 3
 
 development:
   <<: *default
-  database: blog
-  username: root
+  database: nome_do_banco_de_dados
+  username: reddevx
   password: root
   host: localhost
-
-production:
-  <<: *default
-  database: postgres://postgres:5Z63WfG3LCUAAD8@lazuli-app-hack.flycast:5432
-  username: postgres
-  password: 5Z63WfG3LCUAAD8
-  host: https://lazuli-hackzz.fly.dev/
+  port: 5432

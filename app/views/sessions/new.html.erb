@@ -1,22 +1,23 @@
-<section class="container p-1">
+<section class="container p-3">
 
-    <h1>Entrar</h1>
-
-  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <h1 class="text-primary text-center">Entrar</h1>
+    <center>
+   <%= image_tag "login.svg", alt: "Exemplo de imagem", style: 'height: 300px', class: 'text-center'  %>
+   </center>
+  <div class="col-12 col-md-offset-3 col-xs-12">
     <%= form_for :session, url: entrar_path, method: :post do |f| %>
 
       <div class="form-group">
-        <%= f.label :email %>
+        <%= f.label :email, class: 'fw-bold' %>
         <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password %>
+        <%= f.label :password, class: 'fw-bold' %>
         <%= f.password_field :password, placeholder: 'Senha', class: 'form-control' %>
       </div>
-
-      <%= f.submit 'Entrar', class: 'btn btn-primary' %>
-
+<br>
+     <%= f.submit 'Logar', class: "text-light shadow__btn text-center" %>
     <% end %>
   </div>
 </div>

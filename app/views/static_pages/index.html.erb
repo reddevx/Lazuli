@@ -34,8 +34,7 @@
           <br>
           <div id="texto-animado" class="text-primary fw-bold" style="font-size: 55px;"></div>
           <span class="cursor"></span>
-          <p class="text-dark lead text-md-start">Transformando ideias em realidade digital com a sincronia
-            perfeita do desenvolvimento de sites.</p>
+          <p class="text-dark lead text-md-start">O melhor método para se manter informado sobre nossa Cidade!</p>
           <div class="mt-5 ">
 <button class="shadow__btn">  
   <%= link_to 'Criar Conta', cadastro_path, class: 'text-decoration-none text-light' %>
@@ -208,7 +207,7 @@
 
 <% if !user_signed_in? %>
 
-<% end %>
+<% else %>
 
 <section class="bg-body-secondary p-2 col-12">
   <h2 class="text-md-start container text-primary">Mais Recursos</h2>
@@ -232,6 +231,7 @@
 </div>
 <br>
 </section>
+<% end %>
 <hr>
 
 <script>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Lazuli.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -79,23 +79,12 @@ body::-webkit-scrollbar {
     background-color: #0056b3;
   }
 
+
 </style>
   <body>  
+<main class="container">
     <%= render 'layouts/header' %>
-
-     <% if !user_signed_in? %>
-     <% else%>
-    <main class="container p-2">
-    <section class="container bg-tertiary">
-      <form class="d-flex text-md-center container" id="searchForm">
-  <input class="form-control me-2 border border-primary textt-primary" type="search" placeholder="Buscar" aria-label="Search" id="searchInput">
-  <button class="btn btn-outline-primary" type="submit">Buscar</button>
-</form>
-</section>
-  <br>
-
-  
-<% end %>
+<br><br><br><br>
 
 <% flash.each do |message_type, message| %>
   <%= content_tag 'div', class: "alert alert-success alert-#{message_type} alert-dismissible", role: 'alert' do %>
@@ -161,6 +150,13 @@ function voltarAoTopo() {
     });
   });
 
+document.addEventListener("DOMContentLoaded", function() {
+  var fadeElems = document.querySelectorAll('.fade-in');
+
+  fadeElems.forEach(function(elem) {
+    elem.style.opacity = 1;
+  });
+});
 
 </script>
 

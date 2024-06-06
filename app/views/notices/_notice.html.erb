@@ -1,13 +1,13 @@
 <div id="<%= dom_id notice %>" class="container-fluid notice-container">
   <div class="row">
+    
     <% if notice.image.present? %>
       <div class="col-md-4">
-        <%= image_tag(notice.image.url, class: "notice-image img-fluid border border-primary border-2") %>
+        <%= image_tag(notice.image.url, class: "notice-image img-fluid border border-primary border-2")  %>
       </div>
     <% end %>
     <div class="col-md-8">
-      <p class="notice-title">
-        <strong>Titulo:</strong>
+      <p class="notice-title fw-bold text-primary h2">
         <%= notice.title %>
       </p>
       <p class="notice-content">
